@@ -11,6 +11,15 @@
   margin-top: 50px;
 
   .stressContainer {
-      margin-bottom: 30px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+
+    .image {
+      border-radius: 10px;
+      height: 200px;
+      align-self: center;
+      margin: 10px 0;
+    }
   }
 }
