@@ -152,8 +152,8 @@ export const LATERAL_ROOTS_ATTR = {
         },
         {
             type: ATTRIBUTES.LATERAL_ROOTS.DENSITY,
-            label: "Density per unit of main root",
-            question: <span>How has the <strong>density per unit of main root</strong> evolved ?</span>,
+            label: "Density of lateral roots per unit of main root",
+            question: <span>How has the <strong>density of lateral roots per unit of main root</strong> evolved ?</span>,
             values: [POSSIBLE_VALUES.DECREASED, POSSIBLE_VALUES.INCREASED, POSSIBLE_VALUES.STOPPED]
         },
         {
@@ -166,12 +166,6 @@ export const LATERAL_ROOTS_ATTR = {
             type: ATTRIBUTES.LATERAL_ROOTS.ANGLE,
             label: "Angle with the primary roots",
             question: <span>How has the <strong>angle with the primary root</strong> evolved ?</span>,
-            values: [POSSIBLE_VALUES.DECREASED, POSSIBLE_VALUES.INCREASED, POSSIBLE_VALUES.STOPPED]
-        },
-        {
-            type: ATTRIBUTES.LATERAL_ROOTS.DISTANCE,
-            label: "Mean distance between lateral roots",
-            question: <span>How has the <strong>mean distance between lateral roots</strong> evolved ?</span>,
             values: [POSSIBLE_VALUES.DECREASED, POSSIBLE_VALUES.INCREASED, POSSIBLE_VALUES.STOPPED]
         },
         {
