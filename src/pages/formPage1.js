@@ -14,7 +14,7 @@ const FormPage1 = (props) => {
     }
 
     return <Layout title="Solify">
-            <Form form={PRIMARY_ROOT_ATTR} page={1} onNext={handleOnNext} onPrevous={handleOnPrevious}/>
+            <Form form={PRIMARY_ROOT_ATTR} page={1} onNext={handleOnNext} onPrevious={handleOnPrevious}/>
     </Layout>
 }
 

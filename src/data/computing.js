@@ -31,13 +31,8 @@ function computeResultForStress(stress, data) {
     stress.values.primary_root.forEach((attribute) => {
         nbOfTotalAttr++;
         if (data.primary_root[attribute.attribute] === attribute.value) {
-            console.log(PRIMARY_ROOT_ATTR.attributes.find((attr) => {
-                debugger;
-                return attr.type === attribute.attribute
-            }));
             correctAttributes.primary_root.push({
                 attribute: PRIMARY_ROOT_ATTR.attributes.find((attr) => {
-                    debugger;
                     return attr.type === attribute.attribute
                 }).label,
                 value: attribute.value
@@ -56,7 +51,6 @@ function computeResultForStress(stress, data) {
         if (data.lateral_roots[attribute.attribute] === attribute.value) {
             correctAttributes.lateral_roots.push({
                 attribute: LATERAL_ROOTS_ATTR.attributes.find((attr) => {
-                    debugger;
                     return attr.type === attribute.attribute
                 }).label,
                 value: attribute.value
@@ -75,7 +69,6 @@ function computeResultForStress(stress, data) {
         if (data.additional_info[attribute.attribute] === attribute.value) {
             correctAttributes.additional_info.push({
                 attribute: ADDITIONAL_INFO_ATTR.attributes.find((attr) => {
-                    debugger;
                     return attr.type === attribute.attribute
                 }).label,
                 value: attribute.value
