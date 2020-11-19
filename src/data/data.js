@@ -11,9 +11,9 @@ import temperature_supra from "../assets/flood.jpg";
 import fire from "../assets/flood.jpg";
 import obstacles from "../assets/flood.jpg";
 
-import primary_root_img from "../assets/flood.jpg";
-import lateral_roots_img from "../assets/flood.jpg";
-import additional_infos_img from "../assets/flood.jpg";
+import primary_root_img from "../assets/primary_root.png";
+import lateral_roots_img from "../assets/lateral_roots.png";
+import additional_infos_img from "../assets/additional_infos.png";
 
 export const ENVIRONMENTAL_FACTORS = {
     WATER_STRESS: {
