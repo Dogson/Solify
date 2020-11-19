@@ -12,7 +12,31 @@ const ResultPage = ({primary_root, lateral_roots, additional_info, ...props}) =>
 
     return <Layout title="Solify">
         <div className={styles.resultsPageContainer}>
-            <h2>Résultats</h2>
+            <h2>Results - Environmental Stresses</h2>
+
+            <div className={styles.stressesContainer}>
+                {results.map((result, i) => {
+                    return <div className={styles.stressContainer} key={i}>
+                        <h3>{result.stress}</h3>
+                        <p className="text-muted">Here are the parameters that allow us to get to this conclusion :</p>
+                        {result.details.correctAttributes.primary_root.length > 0 && <strong>Primary root</strong>}
+                        {result.details.correctAttributes.primary_root.map((detail) => {
+                           return <p>{detail.attribute} : {detail.value}</p>
+                        })}
+
+                        {result.details.correctAttributes.lateral_roots.length > 0 && <strong>Lateral roots</strong>}
+                        {result.details.correctAttributes.lateral_roots.map((detail) => {
+                            return <p>{detail.attribute} : {detail.value}</p>
+                        })}
+
+                        {result.details.correctAttributes.additional_info.length > 0 && <strong>Additional information</strong>}
+                        {result.details.correctAttributes.additional_info.map((detail) => {
+                            return <p>{detail.attribute} : {detail.value}</p>
+                        })}
+                    </div>
+                })}
+                {results.length === 0 && <p>The data you entered are not enough to get a conclusion.</p>}
+            </div>
         </div>
     </Layout>
 }

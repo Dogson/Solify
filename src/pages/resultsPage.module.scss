@@ -6,3 +6,11 @@
   align-items: center;
   flex: 1;
 }
+
+.stressesContainer {
+  margin-top: 50px;
+
+  .stressContainer {
+      margin-bottom: 30px;
+  }
+}
