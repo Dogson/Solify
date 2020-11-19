@@ -14,12 +14,6 @@
   .question {
     margin-top: 40px;
   }
-
-  .footer {
-    display: flex;
-    flex-direction: row;
-    align-self: flex-end;
-  }
 }
 
 @media #{$media-phone} {

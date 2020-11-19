@@ -37,6 +37,11 @@ const ResultPage = ({primary_root, lateral_roots, additional_info, ...props}) =>
                 })}
                 {results.length === 0 && <p>The data you entered are not enough to get a conclusion.</p>}
             </div>
+
+            <div className={styles.footer}>
+                <Button variant="outlined" onClick={() => props.history.push("/form-3")}>Back</Button>
+                <Button onClick={() => props.history.push("/")}>Go home</Button>
+            </div>
         </div>
     </Layout>
 }

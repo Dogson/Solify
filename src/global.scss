@@ -74,3 +74,10 @@ h3 {
 .text {
   font-size: $size-normal;
 }
+
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  align-self: flex-end;
+}
