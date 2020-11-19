@@ -163,7 +163,7 @@ export const ADDITIONAL_INFO_ATTR = {
     ]
 }
 
-export const results = [
+export const STRESS_RESULTS = [
     {
         factor: ENVIRONMENTAL_FACTORS.WATER_STRESS,
         values: {
@@ -210,7 +210,9 @@ export const results = [
                     value: POSSIBLE_VALUES.STOPPED,
                     important: true
                 }
-            ]
+            ],
+            lateral_roots: [],
+            additional_info: []
         }
     },
     {

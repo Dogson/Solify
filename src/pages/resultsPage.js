@@ -5,6 +5,7 @@ import { Button } from 'react-bootstrap';
 import withRouter from "react-router-dom/es/withRouter";
 import {connect} from "react-redux";
 import {ACTIONS_FORM} from "../actions/formActions";
+import {computeResults} from "../data/computing";
 
 const ResultPage = ({primary_root, lateral_roots, additional_info, ...props}) => {
     const results = computeResults({primary_root, lateral_roots, additional_info});
