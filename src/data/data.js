@@ -85,7 +85,7 @@ export const POSSIBLE_VALUES = {
     YES: "Yes",
     NO: "No",
     NEW_LATERAL_ROOTS: "New lateral roots develop and multiply near the surface",
-    LONGER_ROOTS: "Longer roots but lower number of long lateral rootsfirst to third order in the first 10 cm",
+    LONGER_ROOTS: <span>0-10 cm : lower number of lateral roots first to third order in the first 10 cm <br/> after 10 : higher number of lateral roots first to third order and especially for 3rd order</span>,
     NONE: "None",
     DISCOLORATION: "Discoloration of the root",
 }
@@ -217,7 +217,7 @@ export const ADDITIONAL_INFO_ATTR = {
             type: ATTRIBUTES.ADDITIONAL_INFO.CHARACTERISTIC_ELEMENTS,
             label: "Very characteristic elements",
             question: <span>Have you noticed any of theses characteristic elements ?</span>,
-            values: [POSSIBLE_VALUES.NEW_LATERAL_ROOTS, POSSIBLE_VALUES.LONGER_ROOTS, POSSIBLE_VALUES.NONE],
+            values: [POSSIBLE_VALUES.NEW_LATERAL_ROOTS, POSSIBLE_VALUES.LONGER_ROOTS, POSSIBLE_VALUES.DISCOLORATION, POSSIBLE_VALUES.NONE],
             default: POSSIBLE_VALUES.NONE
         }
     ]
