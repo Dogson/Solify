@@ -1,0 +1,23 @@
+@import "../global";
+
+.pageContainer {
+  background-color: $color-bright-2;
+  min-height: 100vh;
+  min-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .pageContent {
+    max-width: $containerWidth;
+    width: 100%;
+    margin: 30px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+    .titleContainer {
+      margin-top: 10px;
+    }
+  }
+}

@@ -1,0 +1,65 @@
+/**
+  GLOBAL VARIABLES
+ */
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500");
+@import url('https://fonts.googleapis.com/css?family=Karla&display=swap');
+@import url("https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css");
+@import "~bootstrap/scss/bootstrap";
+
+//layout
+$containerWidth: 1000px;
+
+//font weights :
+$weight-light: 300;
+$weight-regular: normal;
+$weight-bold: 500;
+$weight-bolder: 600;
+
+//text size
+$size-smallest: 9px;
+$size-smaller: 12px;
+$size-small: 15px;
+$size-normal: 18px;
+$size-big: 20px;
+$size-bigger: 24px;
+$size-biggest: 36px;
+
+//colors
+$color-dark-1: #cb997e;
+$color-dark-2: #a5a58d;
+$color-dark-3:#ddbea9;
+$color-bright-1: #eddcd2;
+$color-bright-2: #f0efeb;
+$color-text: rbga(0, 0, 0, 0.8);
+
+//media sizes
+$media-tablet: "screen and (max-width : 1260px)";
+$media-phone: "screen and (max-width : 600px)";
+
+body {
+  margin: 0;
+  color: $color-text;
+}
+
+html {
+  font-family: 'Roboto', sans-serif;
+  font-weight: $weight-light;
+  font-size: $size-normal;
+  background-color: white;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Karla', sans-serif;
+}
+
+h1 {
+  font-size: 42px;
+  color: $color-dark-1;
+}
+
+.text {
+
+}
