@@ -29,7 +29,7 @@ export const POSSIBLE_VALUES = {
 
 export const ATTRIBUTES = {
     PRIMARY_ROOT: {
-        LENGTH: "diameter",
+        LENGTH: "length",
         DIAMETER: "diameter"
     },
     LATERAL_ROOTS: {
@@ -41,7 +41,7 @@ export const ATTRIBUTES = {
         DISTANCE: "distance",
         LENGTH_FROM_TIP_TO_FIRST_LATERAL_ROOTS: "length_from_tip_to_first_lateral_root"
     },
-    ADDITIONAL_INFOS: {
+    ADDITIONAL_INFO: {
         BRANCHING: "branching",
         ROOT_SHOOT_RATIO: "root_shoot_ratio",
         ROOT_HAIRS: "root_hairs",
@@ -51,104 +51,110 @@ export const ATTRIBUTES = {
 
 }
 
-export const primary_root_parameters =
+export const primary_root =
     {
+        id: "primary_root",
         label: "Primary root",
+        description: <span>Please answer these questions about the <strong>primary root</strong>.</span>,
         attributes: [
             {
                 type: ATTRIBUTES.PRIMARY_ROOT.LENGTH,
                 label: "Length",
                 question:
                     <span>How has the length of the <strong>primary root (related to depth)</strong> evolved ?</span>,
-                values: [POSSIBLE_VALUES.INCREASED, POSSIBLE_VALUES.DECREASED, POSSIBLE_VALUES.STOPPED]
+                values: [POSSIBLE_VALUES.DECREASED, POSSIBLE_VALUES.STOPPED, POSSIBLE_VALUES.INCREASED]
             },
             {
                 type: ATTRIBUTES.PRIMARY_ROOT.DIAMETER,
                 label: "Diameter",
                 question: <span>How has the <strong>diameter</strong> of the primary root evolved ?</span>,
-                values: [POSSIBLE_VALUES.INCREASED, POSSIBLE_VALUES.DECREASED]
+                values: [POSSIBLE_VALUES.DECREASED, POSSIBLE_VALUES.INCREASED]
             }
         ]
     }
 
 export const lateral_roots = {
+    id: "lateral_roots",
     label: "Lateral roots",
+    description: <span>Please answer these questions about the <strong>lateral roots</strong>.</span>,
     attributes: [
         {
             type: ATTRIBUTES.LATERAL_ROOTS.LENGTH,
             label: "Length",
             question:
                 <span>How has the <strong>length</strong> of the lateral roots (related to depth) evolved ?</span>,
-            values: [POSSIBLE_VALUES.INCREASED, POSSIBLE_VALUES.DECREASED, POSSIBLE_VALUES.STOPPED]
+            values: [POSSIBLE_VALUES.DECREASED, POSSIBLE_VALUES.STOPPED, POSSIBLE_VALUES.INCREASED]
         },
         {
             type: ATTRIBUTES.LATERAL_ROOTS.NUMBER,
             label: "Number",
             question: <span>How has the <strong>number</strong> of lateral roots evolved ?</span>,
-            values: [POSSIBLE_VALUES.INCREASED, POSSIBLE_VALUES.DECREASED]
+            values: [POSSIBLE_VALUES.DECREASED, POSSIBLE_VALUES.INCREASED]
         },
         {
             type: ATTRIBUTES.LATERAL_ROOTS.DENSITY,
             label: "Density per unit of main root",
             question: <span>How has the <strong>density per unit of main root</strong> evolved ?</span>,
-            values: [POSSIBLE_VALUES.INCREASED, POSSIBLE_VALUES.DECREASED]
+            values: [POSSIBLE_VALUES.DECREASED, POSSIBLE_VALUES.INCREASED]
         },
         {
             type: ATTRIBUTES.LATERAL_ROOTS.DIAMETER,
             label: "Diameter",
             question: <span>How has the <strong>diameter</strong> of the lateral roots evolved ?</span>,
-            values: [POSSIBLE_VALUES.INCREASED, POSSIBLE_VALUES.DECREASED]
+            values: [POSSIBLE_VALUES.DECREASED, POSSIBLE_VALUES.INCREASED]
         },
         {
             type: ATTRIBUTES.LATERAL_ROOTS.ANGLE,
             label: "Angle with the primary roots",
             question: <span>How has the <strong>angle with the primary root</strong> evolved ?</span>,
-            values: [POSSIBLE_VALUES.INCREASED, POSSIBLE_VALUES.DECREASED]
+            values: [POSSIBLE_VALUES.DECREASED, POSSIBLE_VALUES.INCREASED]
         },
         {
             type: ATTRIBUTES.LATERAL_ROOTS.DISTANCE,
             label: "Mean distance between lateral roots",
             question: <span>How has the <strong>mean distance between lateral roots</strong> evolved ?</span>,
-            values: [POSSIBLE_VALUES.INCREASED, POSSIBLE_VALUES.DECREASED]
+            values: [POSSIBLE_VALUES.DECREASED, POSSIBLE_VALUES.INCREASED]
         },
         {
             type: ATTRIBUTES.LATERAL_ROOTS.LENGTH_FROM_TIP_TO_FIRST_LATERAL_ROOTS,
             label: "Length from tip to first lateral root",
             question: <span>How has the <strong>length from tip to first lateral root</strong> evolved ?</span>,
-            values: [POSSIBLE_VALUES.INCREASED, POSSIBLE_VALUES.DECREASED]
+            values: [POSSIBLE_VALUES.DECREASED, POSSIBLE_VALUES.INCREASED]
         }
     ]
 }
 
-export const additional_infos = {
+export const additional_info = {
+    id: "additional_info",
     label: "Additional information",
+    description: <span>Please complete these additional pieces of information.</span>,
     attributes: [
         {
-            type: ATTRIBUTES.ADDITIONAL_INFOS.BRANCHING,
+            type: ATTRIBUTES.ADDITIONAL_INFO.BRANCHING,
             label: "Branching",
             question: <span>How has the <strong>branching</strong> evolved ?</span>,
-            values: [POSSIBLE_VALUES.INCREASED, POSSIBLE_VALUES.DECREASED]
+            values: [POSSIBLE_VALUES.DECREASED, POSSIBLE_VALUES.INCREASED]
         },
         {
-            type: ATTRIBUTES.ADDITIONAL_INFOS.ROOT_SHOOT_RATIO,
+            type: ATTRIBUTES.ADDITIONAL_INFO.ROOT_SHOOT_RATIO,
             label: "Root/shoot ratio",
             question: <span>How has the <strong>root/shoot ratio</strong> evolved ?</span>,
-            values: [POSSIBLE_VALUES.INCREASED, POSSIBLE_VALUES.DECREASED]
+            values: [POSSIBLE_VALUES.DECREASED, POSSIBLE_VALUES.INCREASED]
         },
         {
-            type: ATTRIBUTES.ADDITIONAL_INFOS.ROOT_TIPS,
+            type: ATTRIBUTES.ADDITIONAL_INFO.ROOT_TIPS,
             label: "Root tips",
             question: <span>Has the number of <strong>root tips</strong> increased ?</span>,
-            values: [POSSIBLE_VALUES.YES, POSSIBLE_VALUES.NO]
+            values: [POSSIBLE_VALUES.NO, POSSIBLE_VALUES.YES]
         },
         {
-            type: ATTRIBUTES.ADDITIONAL_INFOS.ROOT_HAIRS,
+            type: ATTRIBUTES.ADDITIONAL_INFO.ROOT_HAIRS,
             label: "Root hairs",
             question: <span>Have you noticed a proliferation of <strong>root hairs</strong> ?</span>,
-            values: [POSSIBLE_VALUES.YES, POSSIBLE_VALUES.NO]
+            values: [POSSIBLE_VALUES.NO, POSSIBLE_VALUES.YES]
         },
         {
-            type: ATTRIBUTES.ADDITIONAL_INFOS.CHARACTERISTIC_ELEMENTS,
+            type: ATTRIBUTES.ADDITIONAL_INFO.CHARACTERISTIC_ELEMENTS,
             label: "Very characteristic elements",
             question: <span>Have you noticed any of theses characteristic elements ?</span>,
             values: [POSSIBLE_VALUES.NEW_LATERAL_ROOTS, POSSIBLE_VALUES.LONGER_ROOTS, POSSIBLE_VALUES.NONE],
@@ -192,7 +198,7 @@ export const results = [
                     value: POSSIBLE_VALUES.DECREASED
                 },
             ],
-            additional_infos: []
+            additional_info: []
         }
     },
     {
@@ -238,9 +244,9 @@ export const results = [
                     important: true
                 },
             ],
-            additional_infos: [
+            additional_info: [
                 {
-                    attribute: ATTRIBUTES.ADDITIONAL_INFOS.ROOT_HAIRS,
+                    attribute: ATTRIBUTES.ADDITIONAL_INFO.ROOT_HAIRS,
                     value: POSSIBLE_VALUES.YES
                 }
             ]
@@ -274,7 +280,7 @@ export const results = [
                     value: POSSIBLE_VALUES.INCREASED
                 },
             ],
-            additional_infos: []
+            additional_info: []
         }
     },
     {
@@ -310,9 +316,9 @@ export const results = [
                     important: true
                 },
             ],
-            additional_infos: [
+            additional_info: [
                 {
-                    attribute: ATTRIBUTES.ADDITIONAL_INFOS.ROOT_SHOOT_RATIO,
+                    attribute: ATTRIBUTES.ADDITIONAL_INFO.ROOT_SHOOT_RATIO,
                     value: POSSIBLE_VALUES.INCREASED
                 }
             ]
@@ -337,9 +343,9 @@ export const results = [
                     value: POSSIBLE_VALUES.STOPPED
                 }
             ],
-            additional_infos: [
+            additional_info: [
                 {
-                    attribute: ATTRIBUTES.ADDITIONAL_INFOS.BRANCHING,
+                    attribute: ATTRIBUTES.ADDITIONAL_INFO.BRANCHING,
                     value: POSSIBLE_VALUES.INCREASED
                 }
             ]
@@ -359,9 +365,9 @@ export const results = [
                     value: POSSIBLE_VALUES.DECREASED
                 }
             ],
-            additional_infos: [
+            additional_info: [
                 {
-                    attribute: ATTRIBUTES.ADDITIONAL_INFOS.BRANCHING,
+                    attribute: ATTRIBUTES.ADDITIONAL_INFO.BRANCHING,
                     value: POSSIBLE_VALUES.INCREASED
                 }
             ]
@@ -392,7 +398,7 @@ export const results = [
                     value: POSSIBLE_VALUES.STOPPED
                 },
             ],
-            additional_infos: []
+            additional_info: []
         }
     },
     {
@@ -406,9 +412,9 @@ export const results = [
                 }
             ],
             lateral_roots: [],
-            additional_infos: [
+            additional_info: [
                 {
-                    attribute: ATTRIBUTES.ADDITIONAL_INFOS.CHARACTERISTIC_ELEMENTS,
+                    attribute: ATTRIBUTES.ADDITIONAL_INFO.CHARACTERISTIC_ELEMENTS,
                     value: POSSIBLE_VALUES.LONGER_ROOTS,
                     important: true
                 }
@@ -440,7 +446,7 @@ export const results = [
                     value: POSSIBLE_VALUES.DECREASED
                 },
             ],
-            additional_infos: []
+            additional_info: []
         }
     },
     {
@@ -472,7 +478,7 @@ export const results = [
                     value: POSSIBLE_VALUES.DECREASED
                 },
             ],
-            additional_infos: []
+            additional_info: []
         }
     },
     {
@@ -490,17 +496,17 @@ export const results = [
                     value: POSSIBLE_VALUES.INCREASED
                 }
             ],
-            additional_infos: [
+            additional_info: [
                 {
-                    attribute: ATTRIBUTES.ADDITIONAL_INFOS.ROOT_SHOOT_RATIO,
+                    attribute: ATTRIBUTES.ADDITIONAL_INFO.ROOT_SHOOT_RATIO,
                     value: POSSIBLE_VALUES.INCREASED
                 },
                 {
-                    attribute: ATTRIBUTES.ADDITIONAL_INFOS.ROOT_TIPS,
+                    attribute: ATTRIBUTES.ADDITIONAL_INFO.ROOT_TIPS,
                     value: POSSIBLE_VALUES.INCREASED
                 },
                 {
-                    attribute: ATTRIBUTES.ADDITIONAL_INFOS.CHARACTERISTIC_ELEMENTS,
+                    attribute: ATTRIBUTES.ADDITIONAL_INFO.CHARACTERISTIC_ELEMENTS,
                     value: POSSIBLE_VALUES.LONGER_ROOTS,
                     important: true
                 },

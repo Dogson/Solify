@@ -40,6 +40,7 @@ $media-phone: "screen and (max-width : 600px)";
 body {
   margin: 0;
   color: $color-text;
+  font-size: $size-small;
 }
 
 html {
@@ -60,6 +61,11 @@ h1 {
   color: $color-dark-1;
 }
 
-.text {
+h2 {
+  font-size: $size-bigger;
+  color: $color-dark-2;
+}
 
+.text {
+  font-size: $size-normal;
 }

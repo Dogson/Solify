@@ -1,0 +1,23 @@
+@import "../../global";
+
+.formContainer {
+  margin-top: 100px;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+
+  .text {
+    margin-bottom: 20px;
+  }
+
+  .question {
+    margin-top: 40px;
+  }
+
+  .footer {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
+  }
+}

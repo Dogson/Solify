@@ -11,3 +11,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+div[role="group"] label.btn-primary.active, label.btn-primary.focus {
+  background-color: #cb997e !important;
+  border-color: #cb997e !important;
+}
+
+div[role="group"] label.btn-primary {
+  width: 160px !important;
+}
+
+small {
+  font-size: 90% !important;
+}
