@@ -17,7 +17,7 @@ const ResultPage = ({primary_root, lateral_roots, additional_info, ...props}) =>
             <div className={styles.stressesContainer}>
                 {results.map((result, i) => {
                     return <div className={styles.stressContainer} key={i}>
-                        <h3>{result.stress}</h3>
+                        <h3>{result.stress} <small>({result.details.successRatio}% relevant parameters)</small></h3>
                         <p className="text-muted">Here are the parameters that allow us to get to this conclusion :</p>
                         {result.details.correctAttributes.primary_root.length > 0 && <strong>Primary root</strong>}
                         {result.details.correctAttributes.primary_root.map((detail) => {
@@ -35,7 +35,7 @@ const ResultPage = ({primary_root, lateral_roots, additional_info, ...props}) =>
                         })}
                     </div>
                 })}
-                {results.length === 0 && <p>The data you entered are not enough to get a conclusion.</p>}
+                {results.length === 0 && <p>The data you entered is not enough to get a conclusion.</p>}
             </div>
 
             <div className={styles.footer}>

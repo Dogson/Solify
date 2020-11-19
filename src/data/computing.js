@@ -6,8 +6,19 @@ export function computeResults(data) {
         const stressComputed = computeResultForStress(stress, data);
         const hasStressed = concludeResultForStress(stressComputed);
         if (hasStressed) {
-            stresses.push({stress: stress.factor, details: stressComputed})
+            stresses.push({
+                stress: stress.factor, details:
+                    {
+                        ...stressComputed,
+                        successRatio: Math.round((stressComputed.nbOfAttr / stressComputed.nbOfTotalAttr) * 100)
+                    }
+            })
         }
+    })
+
+    stresses.sort((a, b) => {
+        console.log(a);
+        return a.details.successRatio > b.details.successRatio ? -1 : 1;
     })
 
     return stresses;
@@ -17,6 +28,7 @@ export function computeResults(data) {
 function computeResultForStress(stress, data) {
     let nbOfTotalAttr = 0;
     let nbOfTotalImportantAttr = 0;
+    let nbOfAttr = 0;
     const correctAttributes = {
         primary_root: [],
         lateral_roots: [],
@@ -37,6 +49,7 @@ function computeResultForStress(stress, data) {
                 }).label,
                 value: attribute.value
             });
+            nbOfAttr++;
             if (attribute.important) {
                 correctImportantAttributes.primary_root.push(attribute.attribute);
             }
@@ -55,6 +68,7 @@ function computeResultForStress(stress, data) {
                 }).label,
                 value: attribute.value
             });
+            nbOfAttr++;
             if (attribute.important) {
                 correctImportantAttributes.lateral_roots.push(attribute.attribute);
             }
@@ -73,6 +87,7 @@ function computeResultForStress(stress, data) {
                 }).label,
                 value: attribute.value
             });
+            nbOfAttr++;
             if (attribute.important) {
                 correctImportantAttributes.additional_info.push(attribute.attribute);
             }
@@ -86,7 +101,8 @@ function computeResultForStress(stress, data) {
         correctAttributes,
         correctImportantAttributes,
         nbOfTotalAttr,
-        nbOfTotalImportantAttr
+        nbOfTotalImportantAttr,
+        nbOfAttr
     }
 }
 
