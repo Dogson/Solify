@@ -1,25 +1,55 @@
 import React from "react";
 
 export const ENVIRONMENTAL_FACTORS = {
-    WATER_STRESS: "Water stress, drought",
-    HIGH_WATER: "High water stress, strong drought",
-    PHOSPHATES_DEFICIENCY: "Phosphates deficiency",
-    HIGH_PHOSPHATES: "High phosphate",
-    NITRATES_DEFICIENCY: "Nitrates deficiency",
-    HIGH_NITRATES: "High nitrates",
-    LOW_SULFATES: "Low sulfates",
-    HIGH_SALINITY: "High salinity",
-    FLOODING: "Flooding, anoxia, hypoxia",
-    TEMPERATURE_SUBOPTIMAL: "Temperature (suboptimal)",
-    TEMPERATURE_SUPRAOPTIMAL: "Temperature (supraoptimal)",
-    FIRE: "Fire",
-    OBSTACLES: "Obstacles on the path"
+    WATER_STRESS: {
+        name: "Water stress, drought",
+        description: "By gravity water accumulates in deeper soil. During drought the topsoil is dry and the plant invests in the elongation of the primary root, leading to thinner roots, less numerous and shorter lateral roots which bend downard to seek for water."
+    },
+    PHOSPHATES_DEFICIENCY: {
+        name: "Phosphates deficiency",
+        description: "Phosphore is a important nutrient for plants, and is found mainly in the form of phosphates. Phosphates are low mobile nutrients and thus accumulate in the topsoil because of plant cycling. Therefore in limilting P conditions the plant will invest more in developping a shallow root system. The primary root will be shorter, the lateral roots longer and denser in the topsoil, with proliferation of root hairs to increase the surface area of exchange between the plant and the soil where P is the most concentrated."
+    },
+    HIGH_PHOSPHATES: {
+        name: "High phosphate",
+        description: "An excess of P supply leads to a metal nutrient deficiency, it active an ethylen signal which inhibe cell proliferation and stop primary root growth"
+    },
+    NITRATES_DEFICIENCY: {
+        name: "Nitrates deficiency",
+        description: "Nitrogen is used by plants to ***, and is often found in the form of nitrates. On the opposite to phosphates, nitrates are very mobile nutrients, they leach and accumulate in deeper soil horizon due to vertical water flow. In conditions of limiting N, the plant invests in growing deeper, with a longer primary root, less numerous, shorter and thinner lateral roots which are bending downards. However in patches of high nitrate concentrations lateral roots are more developped and much denser to exploit N ressources."},
+    HIGH_NITRATES: {
+        name: "High nitrates",
+        description: "Nitrogen is used by plants to ***, and is often found in the form of nitrates. On the opposite to phosphates, nitrates are very mobile nutrients, they leach and accumulate in deeper soil horizon due to vertical water flow. In conditions of limiting N, the plant invests in growing deeper, with a longer primary root, less numerous, shorter and thinner lateral roots which are bending downards. However in patches of high nitrate concentrations lateral roots are more developped and much denser to exploit N ressources."
+    },
+    HIGH_SALINITY: {
+        name: "High salinity",
+        description: "In an environment with high salinity, the growth roots will be inhibited. All the roots will be shorter  but with a same density of laterals and the number of laterals is lower because the primary root is shorter.  The roots will have the same behavior that in a drought environment, it will be the same effect as an osmotic stress. Except for the main root it will be inhibited for salinity but promoted for drought."
+    },
+    FLOODING: {
+        name: "Flooding, anoxia, hypoxia",
+        description: "The response of the root for a floodind/anoxia/hypoxia environment will be an instantaneous arrest of roots growthing. Themain  root will decrease but new lateral roots will develop and multiply near the surface. Then a lot of new roots will growth closed to the surface (superficial rooting patterns) and there is a formation of an aerenchymatic tissu which is a pathway for oxygen in the root."
+    },
+    TEMPERATURE_SUBOPTIMAL: {
+        name: "Temperature (suboptimal)",
+        description: "Root-zone temperature (RTZ) is usually lower than atmospheric temperature and is less sensitive to rapid fluctuations. Plants have an optimal RTZ at which their root growth is the greatest. At lower temperatures (suboptimal), root growth is reduced but it also impacts the root architecture. The primary root will be shorter, and the lateral roots will be less dense and sill bend downward. The root/shoot ratio (i.e. biomass of roots compared to biomass of shoot) usually increase if the limit to the root growth is not reach. The beahavoir of the roots is related to nutrient limitation, for optimal performances the plant must increase the lateral root length for a higher nutrient acquisition."
+    },
+    TEMPERATURE_SUPRAOPTIMAL: {
+        name: "Temperature (supraoptimal)",
+        description: "For a temperature supraoptimal the length of the main root will decrease but the diameter will increase. The diameter of the lateral roots will increase but the angle with primary root and the density per unit of main root will decrease. And the root ratio usually increased if the limit to root growth is not reached."
+    },
+    FIRE: {
+        name: "Fire",
+        description: ""
+    },
+    OBSTACLES: {
+        name: "Obstacles on the path",
+        description: "In the soil there is a lot of obstacles, for exemple pebbles, rocks, or impermeable lithology that can obliged the root to bypass the obstacle. The root will adapt to the shape of the obstacle. The root architectture will also depend on the hardness and porosity of the soil, more generally on the soil structure."
+    },
 }
 
 export const POSSIBLE_VALUES = {
     INCREASED: "Increased",
     DECREASED: "Decreased",
-    STOPPED: "Stopped",
+    STOPPED: "Unchanged",
     YES: "Yes",
     NO: "No",
     NEW_LATERAL_ROOTS: "New lateral roots develop and multpiply near the surface",
@@ -62,13 +92,13 @@ export const PRIMARY_ROOT_ATTR =
                 label: "Length",
                 question:
                     <span>How has the length of the <strong>primary root (related to depth)</strong> evolved ?</span>,
-                values: [POSSIBLE_VALUES.DECREASED, POSSIBLE_VALUES.STOPPED, POSSIBLE_VALUES.INCREASED]
+                values: [POSSIBLE_VALUES.DECREASED, POSSIBLE_VALUES.INCREASED, POSSIBLE_VALUES.STOPPED]
             },
             {
                 type: ATTRIBUTES.PRIMARY_ROOT.DIAMETER,
                 label: "Diameter",
                 question: <span>How has the <strong>diameter</strong> of the primary root evolved ?</span>,
-                values: [POSSIBLE_VALUES.DECREASED, POSSIBLE_VALUES.INCREASED]
+                values: [POSSIBLE_VALUES.DECREASED, POSSIBLE_VALUES.INCREASED, POSSIBLE_VALUES.STOPPED]
             }
         ]
     }
@@ -83,43 +113,43 @@ export const LATERAL_ROOTS_ATTR = {
             label: "Length",
             question:
                 <span>How has the <strong>length</strong> of the lateral roots (related to depth) evolved ?</span>,
-            values: [POSSIBLE_VALUES.DECREASED, POSSIBLE_VALUES.STOPPED, POSSIBLE_VALUES.INCREASED]
+            values: [POSSIBLE_VALUES.DECREASED, POSSIBLE_VALUES.INCREASED, POSSIBLE_VALUES.STOPPED]
         },
         {
             type: ATTRIBUTES.LATERAL_ROOTS.NUMBER,
             label: "Number",
             question: <span>How has the <strong>number</strong> of lateral roots evolved ?</span>,
-            values: [POSSIBLE_VALUES.DECREASED, POSSIBLE_VALUES.INCREASED]
+            values: [POSSIBLE_VALUES.DECREASED, POSSIBLE_VALUES.INCREASED, POSSIBLE_VALUES.STOPPED]
         },
         {
             type: ATTRIBUTES.LATERAL_ROOTS.DENSITY,
             label: "Density per unit of main root",
             question: <span>How has the <strong>density per unit of main root</strong> evolved ?</span>,
-            values: [POSSIBLE_VALUES.DECREASED, POSSIBLE_VALUES.INCREASED]
+            values: [POSSIBLE_VALUES.DECREASED, POSSIBLE_VALUES.INCREASED, POSSIBLE_VALUES.STOPPED]
         },
         {
             type: ATTRIBUTES.LATERAL_ROOTS.DIAMETER,
             label: "Diameter",
             question: <span>How has the <strong>diameter</strong> of the lateral roots evolved ?</span>,
-            values: [POSSIBLE_VALUES.DECREASED, POSSIBLE_VALUES.INCREASED]
+            values: [POSSIBLE_VALUES.DECREASED, POSSIBLE_VALUES.INCREASED, POSSIBLE_VALUES.STOPPED]
         },
         {
             type: ATTRIBUTES.LATERAL_ROOTS.ANGLE,
             label: "Angle with the primary roots",
             question: <span>How has the <strong>angle with the primary root</strong> evolved ?</span>,
-            values: [POSSIBLE_VALUES.DECREASED, POSSIBLE_VALUES.INCREASED]
+            values: [POSSIBLE_VALUES.DECREASED, POSSIBLE_VALUES.INCREASED, POSSIBLE_VALUES.STOPPED]
         },
         {
             type: ATTRIBUTES.LATERAL_ROOTS.DISTANCE,
             label: "Mean distance between lateral roots",
             question: <span>How has the <strong>mean distance between lateral roots</strong> evolved ?</span>,
-            values: [POSSIBLE_VALUES.DECREASED, POSSIBLE_VALUES.INCREASED]
+            values: [POSSIBLE_VALUES.DECREASED, POSSIBLE_VALUES.INCREASED, POSSIBLE_VALUES.STOPPED]
         },
         {
             type: ATTRIBUTES.LATERAL_ROOTS.LENGTH_FROM_TIP_TO_FIRST_LATERAL_ROOTS,
             label: "Length from tip to first lateral root",
             question: <span>How has the <strong>length from tip to first lateral root</strong> evolved ?</span>,
-            values: [POSSIBLE_VALUES.DECREASED, POSSIBLE_VALUES.INCREASED]
+            values: [POSSIBLE_VALUES.DECREASED, POSSIBLE_VALUES.INCREASED, POSSIBLE_VALUES.STOPPED]
         }
     ]
 }
@@ -133,13 +163,13 @@ export const ADDITIONAL_INFO_ATTR = {
             type: ATTRIBUTES.ADDITIONAL_INFO.BRANCHING,
             label: "Branching",
             question: <span>How has the <strong>branching</strong> evolved ?</span>,
-            values: [POSSIBLE_VALUES.DECREASED, POSSIBLE_VALUES.INCREASED]
+            values: [POSSIBLE_VALUES.DECREASED, POSSIBLE_VALUES.INCREASED, POSSIBLE_VALUES.STOPPED]
         },
         {
             type: ATTRIBUTES.ADDITIONAL_INFO.ROOT_SHOOT_RATIO,
             label: "Root/shoot ratio",
             question: <span>How has the <strong>root/shoot ratio</strong> evolved ?</span>,
-            values: [POSSIBLE_VALUES.DECREASED, POSSIBLE_VALUES.INCREASED]
+            values: [POSSIBLE_VALUES.DECREASED, POSSIBLE_VALUES.INCREASED, POSSIBLE_VALUES.STOPPED]
         },
         {
             type: ATTRIBUTES.ADDITIONAL_INFO.ROOT_TIPS,
@@ -198,20 +228,6 @@ export const STRESS_RESULTS = [
                     value: POSSIBLE_VALUES.DECREASED
                 },
             ],
-            additional_info: []
-        }
-    },
-    {
-        factor: ENVIRONMENTAL_FACTORS.HIGH_WATER,
-        values: {
-            primary_root: [
-                {
-                    attribute: ATTRIBUTES.PRIMARY_ROOT.LENGTH,
-                    value: POSSIBLE_VALUES.STOPPED,
-                    important: true
-                }
-            ],
-            lateral_roots: [],
             additional_info: []
         }
     },
@@ -332,7 +348,7 @@ export const STRESS_RESULTS = [
             primary_root: [
                 {
                     attribute: ATTRIBUTES.PRIMARY_ROOT.LENGTH,
-                    value: POSSIBLE_VALUES.INCREASED
+                    value: POSSIBLE_VALUES.DECREASED
                 }
             ],
             lateral_roots: [
@@ -343,28 +359,6 @@ export const STRESS_RESULTS = [
                 {
                     attribute: ATTRIBUTES.LATERAL_ROOTS.DENSITY,
                     value: POSSIBLE_VALUES.STOPPED
-                }
-            ],
-            additional_info: [
-                {
-                    attribute: ATTRIBUTES.ADDITIONAL_INFO.BRANCHING,
-                    value: POSSIBLE_VALUES.INCREASED
-                }
-            ]
-        }
-    },
-    {
-        factor: ENVIRONMENTAL_FACTORS.LOW_SULFATES,
-        values: {
-            primary_root: [],
-            lateral_roots: [
-                {
-                    attribute: ATTRIBUTES.LATERAL_ROOTS.DENSITY,
-                    value: POSSIBLE_VALUES.INCREASED
-                },
-                {
-                    attribute: ATTRIBUTES.LATERAL_ROOTS.LENGTH_FROM_TIP_TO_FIRST_LATERAL_ROOTS,
-                    value: POSSIBLE_VALUES.DECREASED
                 }
             ],
             additional_info: [

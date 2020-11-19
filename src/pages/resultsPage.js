@@ -17,7 +17,8 @@ const ResultPage = ({primary_root, lateral_roots, additional_info, ...props}) =>
             <div className={styles.stressesContainer}>
                 {results.map((result, i) => {
                     return <div className={styles.stressContainer} key={i}>
-                        <h3>{result.stress} <small>({result.details.successRatio}% relevant parameters)</small></h3>
+                        <h3>{result.stress.name} <small>({result.details.successRatio}% relevant parameters)</small></h3>
+                        <p>{result.stress.description}</p>
                         <p className="text-muted">Here are the parameters that allow us to get to this conclusion :</p>
                         {result.details.correctAttributes.primary_root.length > 0 && <strong>Primary root</strong>}
                         {result.details.correctAttributes.primary_root.map((detail) => {
