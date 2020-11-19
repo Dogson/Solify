@@ -51,7 +51,7 @@ export const ATTRIBUTES = {
 
 }
 
-export const primary_root =
+export const PRIMARY_ROOT_ATTR =
     {
         id: "primary_root",
         label: "Primary root",
@@ -73,7 +73,7 @@ export const primary_root =
         ]
     }
 
-export const lateral_roots = {
+export const LATERAL_ROOTS_ATTR = {
     id: "lateral_roots",
     label: "Lateral roots",
     description: <span>Please answer these questions about the <strong>lateral roots</strong>.</span>,
@@ -124,7 +124,7 @@ export const lateral_roots = {
     ]
 }
 
-export const additional_info = {
+export const ADDITIONAL_INFO_ATTR = {
     id: "additional_info",
     label: "Additional information",
     description: <span>Please complete these additional pieces of information.</span>,

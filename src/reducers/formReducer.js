@@ -20,9 +20,9 @@ export default (state = {}, action) => {
         case ACTIONS_FORM.EMPTY_FORM:
             return {
                 ...state,
-                additional_info: null,
-                primary_root: null,
-                lateral_roots: null
+                additional_info: {},
+                primary_root: {},
+                lateral_roots: {}
             };
         default:
             return {

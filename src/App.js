@@ -5,6 +5,7 @@ import React from "react";
 import FormPage1 from "./pages/formPage1";
 import FormPage2 from "./pages/formPage2";
 import FormPage3 from "./pages/formPage3";
+import ResultPage from "./pages/resultsPage";
 
 function App() {
     return (
@@ -14,6 +15,7 @@ function App() {
                 <Route path="/form-1" exact component={FormPage1}/>
                 <Route path="/form-2" exact component={FormPage2}/>
                 <Route path="/form-3" exact component={FormPage3}/>
+                <Route path="/results" exact component={ResultPage}/>
             </Switch>
         </Router>
     );

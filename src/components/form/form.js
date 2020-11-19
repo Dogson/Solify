@@ -45,17 +45,26 @@ const Question = ({attr, onChange, value}) => {
     </div>
 }
 
-const FormCategory = ({form, page, primary_root = {}, onNext, ...props}) => {
-    const [answers, setAnswers] = useState(primary_root);
+const FormCategory = ({form, page, primary_root = {}, lateral_roots = {}, additional_info = {}, onNext, onPrevious, ...props}) => {
+    const [answers, setAnswers] = useState({primary_root, lateral_roots, additional_info})
 
     function handleChange(attr, value) {
         const newAnswers = {...answers};
-        newAnswers[attr.type] = value;
+        newAnswers[form.id][attr.type] = value;
         setAnswers(newAnswers);
     }
 
     function handleOnNext() {
-        props.dispatch({type: ACTIONS_FORM.SET_FORM_PRIMARY_ROOT, payload: answers});
+        switch (form.id) {
+            case "primary_root" :
+                props.dispatch({type: ACTIONS_FORM.SET_FORM_PRIMARY_ROOT, payload: answers[form.id]});
+                break;
+            case "lateral_roots":
+                props.dispatch({type: ACTIONS_FORM.SET_FORM_LATERAL_ROOTS, payload: answers[form.id]});
+                break;
+            default:
+                props.dispatch({type: ACTIONS_FORM.SET_FORM_ADDITIONAL_INFO, payload: answers[form.id]});
+        }
         onNext();
     }
 
@@ -64,14 +73,14 @@ const FormCategory = ({form, page, primary_root = {}, onNext, ...props}) => {
         <div className={styles.text}>{form.description}</div>
         <Form>
             {form.attributes.map(attr =>
-                <Question value={answers[attr.type]}
+                <Question value={answers[form.id][attr.type]}
                           attr={attr}
                           onChange={(value) => handleChange(attr, value)}/>)}
         </Form>
 
         <div className={styles.footer}>
-            <small className="text-muted">{page}/3</small>
-            <Button onClick={handleOnNext}>Next</Button>
+            {page > 1 && <Button variant="outlined" onClick={onPrevious}>Back</Button>}
+            <Button onClick={handleOnNext}>{page < 3 ? `Next →` : `Résultats 🗸`}</Button>
         </div>
     </div>
 }
