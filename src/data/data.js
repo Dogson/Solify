@@ -36,6 +36,11 @@ export const ENVIRONMENTAL_FACTORS = {
         description: "Nitrogen is used by plants to ***, and is often found in the form of nitrates. On the opposite to phosphates, nitrates are very mobile nutrients, they leach and accumulate in deeper soil horizon due to vertical water flow. In conditions of limiting N, the plant invests in growing deeper, with a longer primary root, less numerous, shorter and thinner lateral roots which are bending downards. However in patches of high nitrate concentrations lateral roots are more developped and much denser to exploit N ressources.",
         image: nitrate_def
     },
+    NITRATES_DEFICIENCY_PATCH: {
+        name: "Nitrates deficiency but patch",
+        description: "Nitrogen is used by plants to ***, and is often found in the form of nitrates. On the opposite to phosphates, nitrates are very mobile nutrients, they leach and accumulate in deeper soil horizon due to vertical water flow. In conditions of limiting N, the plant invests in growing deeper, with a longer primary root, less numerous, shorter and thinner lateral roots which are bending downards. However in patches of high nitrate concentrations lateral roots are more developped and much denser to exploit N ressources.",
+        image: nitrate_def
+    },
     HIGH_NITRATES: {
         name: "High nitrates",
         description: "Nitrogen is used by plants to ***, and is often found in the form of nitrates. On the opposite to phosphates, nitrates are very mobile nutrients, they leach and accumulate in deeper soil horizon due to vertical water flow. In conditions of limiting N, the plant invests in growing deeper, with a longer primary root, less numerous, shorter and thinner lateral roots which are bending downards. However in patches of high nitrate concentrations lateral roots are more developped and much denser to exploit N ressources.",
@@ -79,9 +84,10 @@ export const POSSIBLE_VALUES = {
     STOPPED: "Unchanged",
     YES: "Yes",
     NO: "No",
-    NEW_LATERAL_ROOTS: "New lateral roots develop and multpiply near the surface",
+    NEW_LATERAL_ROOTS: "New lateral roots develop and multiply near the surface",
     LONGER_ROOTS: "Longer roots but lower number of long lateral rootsfirst to third order in the first 10 cm",
-    NONE: "None"
+    NONE: "None",
+    DISCOLORATION: "Discoloration of the root",
 }
 
 export const ATTRIBUTES = {
@@ -300,7 +306,8 @@ export const STRESS_RESULTS = [
             primary_root: [
                 {
                     attribute: ATTRIBUTES.PRIMARY_ROOT.LENGTH,
-                    value: POSSIBLE_VALUES.INCREASED
+                    value: POSSIBLE_VALUES.DECREASED,
+                    important: true
                 }
             ],
             lateral_roots: [
@@ -309,13 +316,8 @@ export const STRESS_RESULTS = [
                     value: POSSIBLE_VALUES.DECREASED
                 },
                 {
-                    attribute: ATTRIBUTES.LATERAL_ROOTS.DENSITY,
-                    value: POSSIBLE_VALUES.DECREASED,
-                    important: true
-                },
-                {
-                    attribute: ATTRIBUTES.LATERAL_ROOTS.DISTANCE,
-                    value: POSSIBLE_VALUES.INCREASED
+                    attribute: ATTRIBUTES.LATERAL_ROOTS.NUMBER,
+                    value: POSSIBLE_VALUES.DECREASED
                 },
                 {
                     attribute: ATTRIBUTES.LATERAL_ROOTS.LENGTH_FROM_TIP_TO_FIRST_LATERAL_ROOTS,
@@ -342,11 +344,52 @@ export const STRESS_RESULTS = [
             lateral_roots: [
                 {
                     attribute: ATTRIBUTES.LATERAL_ROOTS.LENGTH,
-                    value: POSSIBLE_VALUES.STOPPED
+                    value: POSSIBLE_VALUES.INCREASED
                 },
                 {
-                    attribute: ATTRIBUTES.LATERAL_ROOTS.NUMBER,
+                    attribute: ATTRIBUTES.LATERAL_ROOTS.DENSITY,
+                    value: POSSIBLE_VALUES.DECREASED
+                },
+                {
+                    attribute: ATTRIBUTES.LATERAL_ROOTS.DIAMETER,
+                    value: POSSIBLE_VALUES.DECREASED
+                },
+                {
+                    attribute: ATTRIBUTES.LATERAL_ROOTS.ANGLE,
+                    value: POSSIBLE_VALUES.DECREASED,
+                    important: true
+                },
+            ],
+            additional_info: [
+                {
+                    attribute: ATTRIBUTES.ADDITIONAL_INFO.ROOT_SHOOT_RATIO,
                     value: POSSIBLE_VALUES.INCREASED
+                }
+            ]
+        }
+    },
+    {
+        factor: ENVIRONMENTAL_FACTORS.NITRATES_DEFICIENCY_PATCH,
+        values: {
+            primary_root: [
+                {
+                    attribute: ATTRIBUTES.PRIMARY_ROOT.LENGTH,
+                    value: POSSIBLE_VALUES.INCREASED,
+                    important: true
+                },
+                {
+                    attribute: ATTRIBUTES.PRIMARY_ROOT.DIAMETER,
+                    value: POSSIBLE_VALUES.DECREASED
+                }
+            ],
+            lateral_roots: [
+                {
+                    attribute: ATTRIBUTES.LATERAL_ROOTS.LENGTH,
+                    value: POSSIBLE_VALUES.DECREASED
+                },
+                {
+                    attribute: ATTRIBUTES.LATERAL_ROOTS.DENSITY,
+                    value: POSSIBLE_VALUES.DECREASED
                 },
                 {
                     attribute: ATTRIBUTES.LATERAL_ROOTS.DIAMETER,
@@ -372,13 +415,15 @@ export const STRESS_RESULTS = [
             primary_root: [
                 {
                     attribute: ATTRIBUTES.PRIMARY_ROOT.LENGTH,
-                    value: POSSIBLE_VALUES.DECREASED
+                    value: POSSIBLE_VALUES.DECREASED,
+                    important: true
                 }
             ],
             lateral_roots: [
                 {
                     attribute: ATTRIBUTES.LATERAL_ROOTS.LENGTH,
-                    value: POSSIBLE_VALUES.INCREASED
+                    value: POSSIBLE_VALUES.DECREASED,
+                    important: true
                 },
                 {
                     attribute: ATTRIBUTES.LATERAL_ROOTS.DENSITY,
@@ -387,8 +432,8 @@ export const STRESS_RESULTS = [
             ],
             additional_info: [
                 {
-                    attribute: ATTRIBUTES.ADDITIONAL_INFO.BRANCHING,
-                    value: POSSIBLE_VALUES.INCREASED
+                    attribute: ATTRIBUTES.ADDITIONAL_INFO.CHARACTERISTIC_ELEMENTS,
+                    value: POSSIBLE_VALUES.DISCOLORATION
                 }
             ]
         }
@@ -427,15 +472,20 @@ export const STRESS_RESULTS = [
             primary_root: [
                 {
                     attribute: ATTRIBUTES.PRIMARY_ROOT.LENGTH,
-                    value: POSSIBLE_VALUES.STOPPED,
+                    value: POSSIBLE_VALUES.DECREASED,
                     important: true
                 }
             ],
-            lateral_roots: [],
+            lateral_roots: [
+                {
+                    attribute: ATTRIBUTES.LATERAL_ROOTS.NUMBER,
+                    value: POSSIBLE_VALUES.DECREASED,
+                }
+            ],
             additional_info: [
                 {
                     attribute: ATTRIBUTES.ADDITIONAL_INFO.CHARACTERISTIC_ELEMENTS,
-                    value: POSSIBLE_VALUES.LONGER_ROOTS,
+                    value: POSSIBLE_VALUES.NEW_LATERAL_ROOTS,
                     important: true
                 }
             ]
@@ -453,20 +503,33 @@ export const STRESS_RESULTS = [
             ],
             lateral_roots: [
                 {
+                    attribute: ATTRIBUTES.LATERAL_ROOTS.LENGTH,
+                    value: POSSIBLE_VALUES.STOPPED,
+                },
+                {
+                    attribute: ATTRIBUTES.LATERAL_ROOTS.NUMBER,
+                    value: POSSIBLE_VALUES.DECREASED,
+                },
+                {
                     attribute: ATTRIBUTES.LATERAL_ROOTS.DENSITY,
                     value: POSSIBLE_VALUES.DECREASED,
                     important: true
-                },
-                {
-                    attribute: ATTRIBUTES.LATERAL_ROOTS.DISTANCE,
-                    value: POSSIBLE_VALUES.INCREASED
                 },
                 {
                     attribute: ATTRIBUTES.LATERAL_ROOTS.ANGLE,
                     value: POSSIBLE_VALUES.DECREASED
                 },
             ],
-            additional_info: []
+            additional_info: [
+                {
+                    attribute: ATTRIBUTES.ADDITIONAL_INFO.BRANCHING,
+                    value: POSSIBLE_VALUES.DECREASED
+                },
+                {
+                    attribute: ATTRIBUTES.ADDITIONAL_INFO.ROOT_SHOOT_RATIO,
+                    value: POSSIBLE_VALUES.INCREASED
+                },
+            ]
         }
     },
     {
@@ -480,10 +543,18 @@ export const STRESS_RESULTS = [
                 },
                 {
                     attribute: ATTRIBUTES.PRIMARY_ROOT.DIAMETER,
-                    value: POSSIBLE_VALUES.DECREASED
+                    value: POSSIBLE_VALUES.INCREASED
                 }
             ],
             lateral_roots: [
+                {
+                    attribute: ATTRIBUTES.LATERAL_ROOTS.LENGTH,
+                    value: POSSIBLE_VALUES.STOPPED,
+                },
+                {
+                    attribute: ATTRIBUTES.LATERAL_ROOTS.NUMBER,
+                    value: POSSIBLE_VALUES.DECREASED,
+                },
                 {
                     attribute: ATTRIBUTES.LATERAL_ROOTS.DENSITY,
                     value: POSSIBLE_VALUES.DECREASED,
@@ -498,7 +569,16 @@ export const STRESS_RESULTS = [
                     value: POSSIBLE_VALUES.DECREASED
                 },
             ],
-            additional_info: []
+            additional_info: [
+                {
+                    attribute: ATTRIBUTES.ADDITIONAL_INFO.BRANCHING,
+                    value: POSSIBLE_VALUES.INCREASED
+                },
+                {
+                    attribute: ATTRIBUTES.ADDITIONAL_INFO.ROOT_SHOOT_RATIO,
+                    value: POSSIBLE_VALUES.INCREASED
+                },
+            ]
         }
     },
     {
@@ -517,6 +597,10 @@ export const STRESS_RESULTS = [
                 }
             ],
             additional_info: [
+                {
+                    attribute: ATTRIBUTES.ADDITIONAL_INFO.BRANCHING,
+                    value: POSSIBLE_VALUES.INCREASED
+                },
                 {
                     attribute: ATTRIBUTES.ADDITIONAL_INFO.ROOT_SHOOT_RATIO,
                     value: POSSIBLE_VALUES.INCREASED
