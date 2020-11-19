@@ -18,12 +18,11 @@ const HomePage = (props) => {
     return <Layout title="Solify">
         <div className={styles.homepageContainer}>
             <h2>Welcome to Solify</h2>
-            <img src={generalImg} className={styles.image}/>
             <div className={styles.body}>
                 <div className={styles.text}>
                     <p>Find out what type of stress has affected your soil.</p>
                 </div>
-                <Button variant="primary" size="lg" onClick={() => props.history.push("/form-1")}>🌱 Start</Button>
+                <Button variant="primary" size="lg" onClick={() => props.history.push("/form-0")}>🌱 Start</Button>
             </div>
         </div>
     </Layout>

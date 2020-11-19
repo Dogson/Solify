@@ -1,5 +1,12 @@
 @import "../global";
 
-.formPageContainer {
-
+.formContainer {
+  margin-top: 100px;
+}
+.image {
+  border-radius: 10px;
+  max-width: 1000px;
+  width: 100%;
+  align-self: center;
+  margin: 10px 0;
 }

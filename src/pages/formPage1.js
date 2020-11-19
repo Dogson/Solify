@@ -10,7 +10,7 @@ const FormPage1 = (props) => {
     }
 
     function handleOnPrevious() {
-        props.history.push("/");
+        props.history.push("/form-0");
     }
 
     return <Layout title="Solify">
