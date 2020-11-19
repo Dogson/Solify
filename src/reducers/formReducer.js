@@ -1,6 +1,6 @@
 import {ACTIONS_FORM} from "../actions/formActions";
 
-export default (state = {}, action) => {
+const reducer = (state = {}, action) => {
     switch (action.type) {
         case ACTIONS_FORM.SET_FORM_PRIMARY_ROOT:
             return {
@@ -30,3 +30,5 @@ export default (state = {}, action) => {
             }
     }
 }
+
+export default reducer;
