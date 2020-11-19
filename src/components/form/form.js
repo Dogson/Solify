@@ -12,7 +12,7 @@ const Question = ({attr, onChange, value}) => {
             <Form.Text className="text-muted">
                 {attr.question}
             </Form.Text>
-            <ButtonGroup toggle>
+            <ButtonGroup toggle className={styles.btnGroup}>
                 {attr.values.map((val, index) => (
                     <ToggleButton
                         key={index}

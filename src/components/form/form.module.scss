@@ -21,3 +21,17 @@
     align-self: flex-end;
   }
 }
+
+@media #{$media-phone} {
+  .btnGroup {
+    display: flex;
+    flex-direction: row !important;
+    flex-wrap: wrap;
+
+    label {
+      margin: 1px;
+      border-radius: 0 !important;
+      margin-left: 0 !important;
+    }
+  }
+}

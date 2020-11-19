@@ -21,3 +21,11 @@
     }
   }
 }
+
+@media #{$media-phone} {
+  .pageContainer {
+    .pageContent{
+      padding: 0 5px;
+    }
+  }
+}
