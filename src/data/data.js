@@ -164,7 +164,8 @@ export const results = [
             primary_root: [
                 {
                     attribute: ATTRIBUTES.PRIMARY_ROOT.LENGTH,
-                    value: POSSIBLE_VALUES.INCREASED
+                    value: POSSIBLE_VALUES.INCREASED,
+                    important: true
                 },
                 {
                     attribute: ATTRIBUTES.PRIMARY_ROOT.LENGTH,
@@ -174,11 +175,13 @@ export const results = [
             lateral_roots: [
                 {
                     attribute: ATTRIBUTES.LATERAL_ROOTS.LENGTH,
-                    value: POSSIBLE_VALUES.DECREASED
+                    value: POSSIBLE_VALUES.DECREASED,
+                    important: true
                 },
                 {
                     attribute: ATTRIBUTES.LATERAL_ROOTS.NUMBER,
-                    value: POSSIBLE_VALUES.DECREASED
+                    value: POSSIBLE_VALUES.DECREASED,
+                    important: true
                 },
                 {
                     attribute: ATTRIBUTES.LATERAL_ROOTS.DIAMETER,
@@ -198,7 +201,8 @@ export const results = [
             primary_root: [
                 {
                     attribute: ATTRIBUTES.PRIMARY_ROOT.LENGTH,
-                    value: POSSIBLE_VALUES.STOPPED
+                    value: POSSIBLE_VALUES.STOPPED,
+                    important: true
                 }
             ]
         }
@@ -209,13 +213,15 @@ export const results = [
             primary_root: [
                 {
                     attribute: ATTRIBUTES.PRIMARY_ROOT.LENGTH,
-                    value: POSSIBLE_VALUES.DECREASED
+                    value: POSSIBLE_VALUES.DECREASED,
+                    important: true
                 }
             ],
             lateral_roots: [
                 {
                     attribute: ATTRIBUTES.LATERAL_ROOTS.LENGTH,
-                    value: POSSIBLE_VALUES.INCREASED
+                    value: POSSIBLE_VALUES.INCREASED,
+                    important: true
                 },
                 {
                     attribute: ATTRIBUTES.LATERAL_ROOTS.NUMBER,
@@ -223,11 +229,13 @@ export const results = [
                 },
                 {
                     attribute: ATTRIBUTES.LATERAL_ROOTS.DENSITY,
-                    value: POSSIBLE_VALUES.INCREASED
+                    value: POSSIBLE_VALUES.INCREASED,
+                    important: true
                 },
                 {
                     attribute: ATTRIBUTES.LATERAL_ROOTS.ANGLE,
-                    value: POSSIBLE_VALUES.INCREASED
+                    value: POSSIBLE_VALUES.INCREASED,
+                    important: true
                 },
             ],
             additional_infos: [
@@ -254,7 +262,8 @@ export const results = [
                 },
                 {
                     attribute: ATTRIBUTES.LATERAL_ROOTS.DENSITY,
-                    value: POSSIBLE_VALUES.DECREASED
+                    value: POSSIBLE_VALUES.DECREASED,
+                    important: true
                 },
                 {
                     attribute: ATTRIBUTES.LATERAL_ROOTS.DISTANCE,
@@ -274,7 +283,8 @@ export const results = [
             primary_root: [
                 {
                     attribute: ATTRIBUTES.PRIMARY_ROOT.LENGTH,
-                    value: POSSIBLE_VALUES.INCREASED
+                    value: POSSIBLE_VALUES.INCREASED,
+                    important: true
                 },
                 {
                     attribute: ATTRIBUTES.PRIMARY_ROOT.DIAMETER,
@@ -296,7 +306,8 @@ export const results = [
                 },
                 {
                     attribute: ATTRIBUTES.LATERAL_ROOTS.ANGLE,
-                    value: POSSIBLE_VALUES.DECREASED
+                    value: POSSIBLE_VALUES.DECREASED,
+                    important: true
                 },
             ],
             additional_infos: [
@@ -362,13 +373,15 @@ export const results = [
             primary_root: [
                 {
                     attribute: ATTRIBUTES.PRIMARY_ROOT.LENGTH,
-                    value: POSSIBLE_VALUES.DECREASED
+                    value: POSSIBLE_VALUES.DECREASED,
+                    important: true
                 }
             ],
             lateral_roots: [
                 {
                     attribute: ATTRIBUTES.LATERAL_ROOTS.LENGTH,
-                    value: POSSIBLE_VALUES.DECREASED
+                    value: POSSIBLE_VALUES.DECREASED,
+                    important: true
                 },
                 {
                     attribute: ATTRIBUTES.LATERAL_ROOTS.NUMBER,
@@ -388,14 +401,16 @@ export const results = [
             primary_root: [
                 {
                     attribute: ATTRIBUTES.PRIMARY_ROOT.LENGTH,
-                    value: POSSIBLE_VALUES.STOPPED
+                    value: POSSIBLE_VALUES.STOPPED,
+                    important: true
                 }
             ],
             lateral_roots: [],
             additional_infos: [
                 {
                     attribute: ATTRIBUTES.ADDITIONAL_INFOS.CHARACTERISTIC_ELEMENTS,
-                    value: POSSIBLE_VALUES.LONGER_ROOTS
+                    value: POSSIBLE_VALUES.LONGER_ROOTS,
+                    important: true
                 }
             ]
         }
@@ -406,13 +421,15 @@ export const results = [
             primary_root: [
                 {
                     attribute: ATTRIBUTES.PRIMARY_ROOT.LENGTH,
-                    value: POSSIBLE_VALUES.DECREASED
+                    value: POSSIBLE_VALUES.DECREASED,
+                    important: true
                 }
             ],
             lateral_roots: [
                 {
                     attribute: ATTRIBUTES.LATERAL_ROOTS.DENSITY,
-                    value: POSSIBLE_VALUES.DECREASED
+                    value: POSSIBLE_VALUES.DECREASED,
+                    important: true
                 },
                 {
                     attribute: ATTRIBUTES.LATERAL_ROOTS.DISTANCE,
@@ -432,7 +449,8 @@ export const results = [
             primary_root: [
                 {
                     attribute: ATTRIBUTES.PRIMARY_ROOT.LENGTH,
-                    value: POSSIBLE_VALUES.DECREASED
+                    value: POSSIBLE_VALUES.DECREASED,
+                    important: true
                 },
                 {
                     attribute: ATTRIBUTES.PRIMARY_ROOT.DIAMETER,
@@ -442,7 +460,8 @@ export const results = [
             lateral_roots: [
                 {
                     attribute: ATTRIBUTES.LATERAL_ROOTS.DENSITY,
-                    value: POSSIBLE_VALUES.DECREASED
+                    value: POSSIBLE_VALUES.DECREASED,
+                    important: true
                 },
                 {
                     attribute: ATTRIBUTES.LATERAL_ROOTS.DIAMETER,
@@ -482,7 +501,8 @@ export const results = [
                 },
                 {
                     attribute: ATTRIBUTES.ADDITIONAL_INFOS.CHARACTERISTIC_ELEMENTS,
-                    value: POSSIBLE_VALUES.LONGER_ROOTS
+                    value: POSSIBLE_VALUES.LONGER_ROOTS,
+                    important: true
                 },
             ]
         }
