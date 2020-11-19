@@ -81,7 +81,7 @@ const FormCategory = ({form, page, primary_root = {}, lateral_roots = {}, additi
 
         <div className={styles.footer}>
             <Button variant="outlined" onClick={onPrevious}>Back</Button>
-            <Button onClick={handleOnNext}>{page < 3 ? `Next →` : `Résultats 🗸`}</Button>
+            <Button onClick={handleOnNext}>{page < 3 ? `Next →` : `Results 🗸`}</Button>
         </div>
     </div>
 }
