@@ -11,6 +11,10 @@ import temperature_supra from "../assets/flood.jpg";
 import fire from "../assets/flood.jpg";
 import obstacles from "../assets/flood.jpg";
 
+import primary_root_img from "../assets/flood.jpg";
+import lateral_roots_img from "../assets/flood.jpg";
+import additional_infos_img from "../assets/flood.jpg";
+
 export const ENVIRONMENTAL_FACTORS = {
     WATER_STRESS: {
         name: "Water stress, drought",
@@ -109,6 +113,7 @@ export const PRIMARY_ROOT_ATTR =
         id: "primary_root",
         label: "Primary root",
         description: <span>Please answer these questions about the <strong>primary root</strong>.</span>,
+        image: primary_root_img,
         attributes: [
             {
                 type: ATTRIBUTES.PRIMARY_ROOT.LENGTH,
@@ -129,6 +134,7 @@ export const PRIMARY_ROOT_ATTR =
 export const LATERAL_ROOTS_ATTR = {
     id: "lateral_roots",
     label: "Lateral roots",
+    image: lateral_roots_img,
     description: <span>Please answer these questions about the <strong>lateral roots</strong>.</span>,
     attributes: [
         {
@@ -180,6 +186,7 @@ export const LATERAL_ROOTS_ATTR = {
 export const ADDITIONAL_INFO_ATTR = {
     id: "additional_info",
     label: "Additional information",
+    image: additional_infos_img,
     description: <span>Please complete these additional pieces of information.</span>,
     attributes: [
         {

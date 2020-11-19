@@ -70,6 +70,7 @@ const FormCategory = ({form, page, primary_root = {}, lateral_roots = {}, additi
 
     return <div className={styles.formContainer}>
         <h2>{form.label}</h2>
+        <img src={form.image} className={styles.image}/>
         <div className={styles.text}>{form.description}</div>
         <Form>
             {form.attributes.map(attr =>

@@ -7,8 +7,11 @@
   flex-direction: column;
   align-self: center;
 
-  .text {
-    margin-bottom: 20px;
+  .image {
+    border-radius: 10px;
+    height: 200px;
+    align-self: center;
+    margin: 10px 0;
   }
 
   .question {
