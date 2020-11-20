@@ -32,17 +32,17 @@ export const ENVIRONMENTAL_FACTORS = {
     },
     NITRATES_DEFICIENCY: {
         name: "Nitrates deficiency",
-        description: "Nitrogen is used by plants to ***, and is often found in the form of nitrates. On the opposite to phosphates, nitrates are very mobile nutrients, they leach and accumulate in deeper soil horizon due to vertical water flow. In conditions of limiting N, the plant invests in growing deeper, with a longer primary root, less numerous, shorter and thinner lateral roots which are bending downards. However in patches of high nitrate concentrations lateral roots are more developped and much denser to exploit N ressources.",
+        description: "Nitrogen is used by plants to produce chlorophyle a which is needed for the photosynthesis, and is often found in the form of nitrates. On the opposite to phosphates, nitrates are very mobile nutrients, they leach and accumulate in deeper soil horizon due to vertical water flow. In conditions of limiting N, the plant invests in growing deeper, with a longer primary root, less numerous, longer and thinner lateral roots which are bending downards. However in patches of high nitrate concentrations lateral roots are more developped and much denser to exploit N ressources. But it is important to not that a too important quantity of nitrogen has is toxic or the plant. It will produce a \"burning effect\" : the root are more dark. It can occurs when there is an hydrophobic layer : the water is blocked and the nitrogen which is soluble is more and more concentrated",
         image: nitrate_def
     },
     NITRATES_DEFICIENCY_PATCH: {
         name: "Nitrates deficiency but patch",
-        description: "Nitrogen is used by plants to ***, and is often found in the form of nitrates. On the opposite to phosphates, nitrates are very mobile nutrients, they leach and accumulate in deeper soil horizon due to vertical water flow. In conditions of limiting N, the plant invests in growing deeper, with a longer primary root, less numerous, shorter and thinner lateral roots which are bending downards. However in patches of high nitrate concentrations lateral roots are more developped and much denser to exploit N ressources.",
+        description: "Nitrogen is used by plants to produce chlorophyle a which is needed for the photosynthesis, and is often found in the form of nitrates. On the opposite to phosphates, nitrates are very mobile nutrients, they leach and accumulate in deeper soil horizon due to vertical water flow. In conditions of limiting N, the plant invests in growing deeper, with a longer primary root, less numerous, longer and thinner lateral roots which are bending downards. However in patches of high nitrate concentrations lateral roots are more developped and much denser to exploit N ressources. But it is important to not that a too important quantity of nitrogen has is toxic or the plant. It will produce a \"burning effect\" : the root are more dark. It can occurs when there is an hydrophobic layer : the water is blocked and the nitrogen which is soluble is more and more concentrated",
         image: nitrate_def
     },
     HIGH_NITRATES: {
         name: "High nitrates",
-        description: "Nitrogen is used by plants to ***, and is often found in the form of nitrates. On the opposite to phosphates, nitrates are very mobile nutrients, they leach and accumulate in deeper soil horizon due to vertical water flow. In conditions of limiting N, the plant invests in growing deeper, with a longer primary root, less numerous, shorter and thinner lateral roots which are bending downards. However in patches of high nitrate concentrations lateral roots are more developped and much denser to exploit N ressources.",
+        description: "Nitrogen is used by plants to produce chlorophyle a which is needed for the photosynthesis, and is often found in the form of nitrates. On the opposite to phosphates, nitrates are very mobile nutrients, they leach and accumulate in deeper soil horizon due to vertical water flow. In conditions of limiting N, the plant invests in growing deeper, with a longer primary root, less numerous, longer and thinner lateral roots which are bending downards. However in patches of high nitrate concentrations lateral roots are more developped and much denser to exploit N ressources. But it is important to not that a too important quantity of nitrogen has is toxic or the plant. It will produce a \"burning effect\" : the root are more dark. It can occurs when there is an hydrophobic layer : the water is blocked and the nitrogen which is soluble is more and more concentrated",
         image: high_nitrate
     },
     HIGH_SALINITY: {
@@ -57,12 +57,12 @@ export const ENVIRONMENTAL_FACTORS = {
     },
     TEMPERATURE_SUBOPTIMAL: {
         name: "Temperature (suboptimal)",
-        description: "Root-zone temperature (RTZ) is usually lower than atmospheric temperature and is less sensitive to rapid fluctuations. Plants have an optimal RTZ at which their root growth is the greatest. At lower temperatures (suboptimal), root growth is reduced but it also impacts the root architecture. The primary root will be shorter, and the lateral roots will be less dense and sill bend downward. The root/shoot ratio (i.e. biomass of roots compared to biomass of shoot) usually increase if the limit to the root growth is not reach. The beahavoir of the roots is related to nutrient limitation, for optimal performances the plant must increase the lateral root length for a higher nutrient acquisition.",
+        description: "Root-zone temperature (RTZ) is usually lower than atmospheric temperature and is less sensitive to rapid fluctuations. Plants have an optimal RTZ at which their root growth is the greatest. Far from the optimal temperature, root growth is reduced but it also impacts the root architecture. At lower temperatures (suboptimal), the primary root will be shorter, and the lateral roots will be less dense, with reduced branching, and will bend downward. The root/shoot ratio (i.e. biomass of roots compared to biomass of shoot) usually increase if the limit to the root growth is not reached. The behavior of the roots is related to nutrient limitation, for optimal performances the plant must increase the lateral root length for a higher nutrient acquisition.",
         image: temperature_sub
     },
     TEMPERATURE_SUPRAOPTIMAL: {
         name: "Temperature (supraoptimal)",
-        description: "For a temperature supraoptimal the length of the main root will decrease but the diameter will increase. The diameter of the lateral roots will increase but the angle with primary root and the density per unit of main root will decrease. And the root ratio usually increased if the limit to root growth is not reached.",
+        description: "Root-zone temperature (RTZ) is usually lower than atmospheric temperature and is less sensitive to rapid fluctuations. Plants have an optimal RTZ at which their root growth is the greatest. Far from the optimal temperature, root growth is reduced but it also impacts the root architecture. At higher temperatures (supraoptimal), the primary root will be shorter, and the lateral roots will be less dense and will bend downward. Moreover the branching can increase and roots diameter may increase. The root/shoot ratio (i.e. biomass of roots compared to biomass of shoot) usually increase if the limit to the root growth is not reached. High temperatures are often linked to water stress, so the responses of the plant might overlap.",
         image: temperature_supra
     },
     FIRE: {
@@ -72,7 +72,7 @@ export const ENVIRONMENTAL_FACTORS = {
     },
     OBSTACLES: {
         name: "Obstacles on the path",
-        description: "In the soil there is a lot of obstacles, for exemple pebbles, rocks, or impermeable lithology that can obliged the root to bypass the obstacle. The root will adapt to the shape of the obstacle. The root architectture will also depend on the hardness and porosity of the soil, more generally on the soil structure.",
+        description: "In the soil there is a lot of obstacles, for exemple pebbles, rocks, or impermeable lithology that can obliged the root to bypass the obstacle. The root will adapt to the shape of the obstacle. The root architectture will also depend on the hardness and porosity of the soil, more generally on the soil structure."
     },
 }
 
@@ -157,7 +157,8 @@ export const LATERAL_ROOTS_ATTR = {
         {
             type: ATTRIBUTES.LATERAL_ROOTS.DENSITY,
             label: "Density of lateral roots per unit of main root",
-            question: <span>How has the <strong>density of lateral roots per unit of main root</strong> evolved ?</span>,
+            question:
+                <span>How has the <strong>density of lateral roots per unit of main root</strong> evolved ?</span>,
             values: [POSSIBLE_VALUES.DECREASED, POSSIBLE_VALUES.INCREASED, POSSIBLE_VALUES.STOPPED]
         },
         {
