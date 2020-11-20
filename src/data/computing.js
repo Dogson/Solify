@@ -1,10 +1,16 @@
-import {ADDITIONAL_INFO_ATTR, LATERAL_ROOTS_ATTR, PRIMARY_ROOT_ATTR, STRESS_RESULTS} from "./data";
+import {
+    ADDITIONAL_INFO_ATTR,
+    ENVIRONMENTAL_FACTORS,
+    LATERAL_ROOTS_ATTR,
+    PRIMARY_ROOT_ATTR,
+    STRESS_RESULTS
+} from "./data";
 
 export function computeResults(data) {
     const stresses = [];
     STRESS_RESULTS.forEach((stress) => {
         const stressComputed = computeResultForStress(stress, data);
-        const hasStressed = concludeResultForStress(stressComputed);
+        const hasStressed = concludeResultForStress(stressComputed, stress);
         if (hasStressed) {
             stresses.push({
                 stress: stress.factor, details:
@@ -106,8 +112,9 @@ function computeResultForStress(stress, data) {
     }
 }
 
-function concludeResultForStress(computed) {
+function concludeResultForStress(computed, stress) {
     const attributes = [];
+    const correctImportantAttributes = [];
     computed.correctAttributes.primary_root.forEach((attr) => {
         attributes.push(attr);
     })
@@ -117,5 +124,18 @@ function concludeResultForStress(computed) {
     computed.correctAttributes.additional_info.forEach((attr) => {
         attributes.push(attr);
     })
-    return attributes.length > computed.nbOfTotalAttr / 2 && attributes.length > computed.nbOfTotalAttr / 4;
+
+    computed.correctImportantAttributes.primary_root.forEach((attr) => {
+        correctImportantAttributes.push(attr);
+    })
+    computed.correctImportantAttributes.lateral_roots.forEach((attr) => {
+        correctImportantAttributes.push(attr);
+    })
+    computed.correctImportantAttributes.additional_info.forEach((attr) => {
+        correctImportantAttributes.push(attr);
+    })
+    if (stress.name === ENVIRONMENTAL_FACTORS.FIRE) {
+        return attributes.length > computed.nbOfTotalAttr / 2 && correctImportantAttributes.length >= 1;
+    }
+    return attributes.length >= computed.nbOfTotalAttr / 2 && correctImportantAttributes.length >= computed.nbOfTotalAttr / 4;
 }
