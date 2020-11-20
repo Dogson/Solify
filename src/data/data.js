@@ -85,7 +85,7 @@ export const POSSIBLE_VALUES = {
     NEW_LATERAL_ROOTS: "New lateral roots develop and multiply near the surface",
     LONGER_ROOTS: <span>0-10 cm : lower number of lateral roots first to third order in the first 10 cm <br/> after 10 : higher number of lateral roots first to third order and especially for 3rd order</span>,
     NONE: "None",
-    DISCOLORATION: "Discoloration of the root",
+    DISCOLORATION: "Root are darker locally where the nitrate is too high (toxicity)",
 }
 
 export const ATTRIBUTES = {
