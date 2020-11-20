@@ -1,15 +1,14 @@
 import React from "react";
-import water_stress from "../assets/flood.jpg";
-import phosphate_def from "../assets/flood.jpg";
-import high_phosphate from "../assets/flood.jpg";
-import nitrate_def from "../assets/flood.jpg";
-import high_nitrate from "../assets/flood.jpg";
-import high_salinity from "../assets/flood.jpg";
-import flooding from "../assets/flood.jpg";
-import temperature_sub from "../assets/flood.jpg";
-import temperature_supra from "../assets/flood.jpg";
-import fire from "../assets/flood.jpg";
-import obstacles from "../assets/flood.jpg";
+import water_stress from "../assets/water_stress.png";
+import phosphate_def from "../assets/phosphate_def.png";
+import high_phosphate from "../assets/high_phosphate.png";
+import nitrate_def from "../assets/nitrate_def.png";
+import high_nitrate from "../assets/high_nitrate.png";
+import high_salinity from "../assets/high_salinity.png";
+import flooding from "../assets/flooding.png";
+import temperature_sub from "../assets/temperature_sub.png";
+import temperature_supra from "../assets/temperature_supra.png";
+import fire from "../assets/fire.png";
 
 import primary_root_img from "../assets/primary_root.png";
 import lateral_roots_img from "../assets/lateral_roots.png";
@@ -74,7 +73,6 @@ export const ENVIRONMENTAL_FACTORS = {
     OBSTACLES: {
         name: "Obstacles on the path",
         description: "In the soil there is a lot of obstacles, for exemple pebbles, rocks, or impermeable lithology that can obliged the root to bypass the obstacle. The root will adapt to the shape of the obstacle. The root architectture will also depend on the hardness and porosity of the soil, more generally on the soil structure.",
-        image: obstacles
     },
 }
 
